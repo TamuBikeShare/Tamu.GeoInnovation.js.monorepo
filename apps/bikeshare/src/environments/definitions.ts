@@ -6,7 +6,6 @@ export const Connections = {
   departmentUrl: 'https://fc-gis.tamu.edu/arcgis/rest/services/FCOR/DepartmentSearch/MapServer/1',
   tsMainUrl: 'https://gis.tamu.edu/arcgis/rest/services/TS/TS_Main/MapServer',
   bikeRacksUrl: 'https://gis.tamu.edu/arcgis/rest/services/TS/TS_Bicycles/MapServer/3',
-  bikeLocationsUrl: 'http://nodes.geoservices.tamu.edu/api/veoride/bikes/?format=geojson&metadata=false&fields=lat,lon'
 };
 
 export const Definitions = {
@@ -17,12 +16,12 @@ export const Definitions = {
     url: `${Connections.basemapUrl}/1`,
     popupComponent: 'BuildingPopupComponent'
   },
-  SURFACE_LOTS: {
-    id: 'surface-lots',
-    layerId: 'surface-lots-layer',
-    name: 'Surface Lots',
-    url: `${Connections.basemapUrl}/12`,
-    popupComponent: 'ParkingLotPopupComponent'
+  CONSTRUCTION: {
+    id: 'construction_zone',
+    layerId: 'construction_zone-layer',
+    name: 'Construction Zone',
+    url: `${Connections.constructionUrl}`,
+    popupComponent: 'ConstructionPopupComponent'
   },
   TRANSPORTATION_PARKING: {
     id: 'transportation-parking',
@@ -36,11 +35,5 @@ export const Definitions = {
     layerId: 'bike-racks-layer',
     name: 'Bike Racks',
     url: `${Connections.bikeRacksUrl}`
-  },
-  BIKE_LOCATIONS: {
-    id: 'bike-locations',
-    layerId: 'bike-locations-layer',
-    name: 'VeoRide Bikes',
-    url: `${Connections.bikeLocationsUrl}`
   }
 };
