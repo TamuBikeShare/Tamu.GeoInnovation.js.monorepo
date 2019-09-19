@@ -984,7 +984,15 @@
             "polyfills": "apps/bikeshare/src/polyfills.ts",
             "tsConfig": "apps/bikeshare/tsconfig.app.json",
             "aot": false,
-            "assets": ["apps/bikeshare/src/favicon.ico", "apps/bikeshare/src/assets"],
+            "assets": [
+                "apps/bikeshare/src/favicon.ico",
+                "apps/bikeshare/src/assets",
+                {
+                  "glob": "**/*",
+                  "input": "./libs/assets/",
+                  "output": "./assets"
+                }
+            ],
             "styles": ["apps/bikeshare/src/styles.scss"],
             "scripts": []
           },
