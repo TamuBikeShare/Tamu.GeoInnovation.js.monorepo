@@ -52,14 +52,8 @@ jobs:
       - image: circleci/node:10.16
     steps:
       - run:
-          name: Server Deploy
+          name: Server Signal Deploy
           command: curl https://obVeos.bike/backend/deploy/{$DEPLOYKEY}
-      - run:
-          name: Stop Server
-          command: ssh -oStrictHostKeyChecking=no ubuntu@${AWS_IP} "trap 'screen -S veoride -X quit' QUIT TERM INT EXIT"
-      - run:
-          name: Update and Start
-          command: ssh -oStrictHostKeyChecking=no ubuntu@${AWS_IP} 'cd TamuBikeShareOptimization && git pull && npm install && screen -dmS veoride ng serve bikeshare --aot'
 
 workflows:
   version: 2.1
